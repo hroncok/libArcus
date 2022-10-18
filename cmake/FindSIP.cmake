@@ -38,7 +38,7 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 
     execute_process(
         COMMAND ${Python3_EXECUTABLE} -c
-                "import distutils.sysconfig; print(distutils.sysconfig.get_python_lib(plat_specific=False,standard_lib=False))"
+                "import sysconfig; print(sysconfig.get_path('purelib'))"
         RESULT_VARIABLE _process_status
         OUTPUT_VARIABLE _process_output
         OUTPUT_STRIP_TRAILING_WHITESPACE
